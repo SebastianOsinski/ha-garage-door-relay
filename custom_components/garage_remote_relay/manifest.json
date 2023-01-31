@@ -1,0 +1,20 @@
+{
+  "domain": "garage_remote_relay",
+  "name": "Garage Remote Relay",
+  "integration_type": "device",
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/integrations/garage_remote_relay",
+  "requirements": [
+    "pyserial>=3.4"
+  ],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": [
+    "@SebastianOsinski"
+  ],
+  "iot_class": "assumed_state",
+  "version": "0.1.0",
+  "issue_tracker": "https://github.com/SebastianOsinski/ha-garage-door-relay/issues"
+}
