@@ -1,18 +1,15 @@
-from serial import Serial
+from lcus_relay import Relay
 import asyncio
-
-CONST_ON = b"\xA0\x01\x01\xA2"
-CONST_OFF = b"\xA0\x01\x00\xA1"
 
 
 class GarageRemote:
-    def __init__(self, serialPort, pressTime):
-        self.serial = Serial(serialPort)
-        self.pressTime = pressTime
+    def __init__(self, serial_port, press_time):
+        self._relay = Relay(serial_port)
+        self._press_time = press_time
 
     async def press(self):
-        self.serial.write(CONST_ON)
+        self._relay.turn_on()
 
-        await asyncio.sleep(self.pressTime)
+        await asyncio.sleep(self._press_time)
 
-        self.serial.write(CONST_OFF)
+        self._relay.turn_off()
